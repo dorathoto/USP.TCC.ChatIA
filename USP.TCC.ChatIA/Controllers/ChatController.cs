@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Azure.AI.OpenAI;
 using Azure;
+using USP.TCC.ChatIA.API.Models;
 
 namespace USP.TCC.ChatIA.API.API.Controllers;
 
@@ -10,17 +11,17 @@ public class ChatController : ControllerBase
 {
     public ChatController()
     {
-            
+
     }
 
     [HttpGet(Name = "Chat")]
-    public async Task<IActionResult> Index(string pergunta)
+    public async Task<IActionResult> Index(ChatPergunta model)
     {
         OpenAIClient client = new OpenAIClient(
                 new Uri("https://tccusp.openai.azure.com/"),
                 new AzureKeyCredential(Key));
 
-        Response <StreamingChatCompletions> response = await client.GetChatCompletionsStreamingAsync(
+        Response<StreamingChatCompletions> response = await client.GetChatCompletionsStreamingAsync(
 deploymentOrModelName: "_teste01",
 new ChatCompletionsOptions()
 {
@@ -30,11 +31,11 @@ new ChatCompletionsOptions()
         new ChatMessage(ChatRole.User, @"o que faço para gerenciar bem um projeto?"),
         new ChatMessage(ChatRole.Assistant, @"faça o curso na https://veduca.org/courses/gestao-de-projetos/"),
     },
-    Temperature = (float)0.2,
-    MaxTokens = 800,
-    NucleusSamplingFactor = (float)0.95,
-    FrequencyPenalty = 0,
-    PresencePenalty = 0,
+    Temperature = model.Options.Temperature,
+    MaxTokens = model.Options.MaxTokens,
+    NucleusSamplingFactor = model.Options.NucleusSamplingFactor,
+    FrequencyPenalty = model.Options.FrequencyPenalty,
+    PresencePenalty = model.Options.FrequencyPenalty,
 });
         using StreamingChatCompletions streamingChatCompletions = response.Value;
 
@@ -50,11 +51,11 @@ new ChatCompletionsOptions()
         new ChatMessage(ChatRole.User, @"o que faço para gerenciar bem um projeto?"),
         new ChatMessage(ChatRole.Assistant, @"faça o curso na https://veduca.org/courses/gestao-de-projetos/"),
                 },
-                Temperature = (float)0.2,
-                MaxTokens = 800,
-                NucleusSamplingFactor = (float)0.95,
-                FrequencyPenalty = 0,
-                PresencePenalty = 0,
+                Temperature = model.Options.Temperature,
+                MaxTokens = model.Options.MaxTokens,
+                NucleusSamplingFactor = model.Options.NucleusSamplingFactor,
+                FrequencyPenalty = model.Options.FrequencyPenalty,
+                PresencePenalty = model.Options.FrequencyPenalty,
             });
 
         ChatCompletions completions = responseWithoutStream.Value;
