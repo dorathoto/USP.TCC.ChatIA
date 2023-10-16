@@ -1,4 +1,4 @@
-namespace USP.TCC.ChatIA
+namespace USP.TCC.ChatIA.API
 {
     public class WeatherForecast
     {

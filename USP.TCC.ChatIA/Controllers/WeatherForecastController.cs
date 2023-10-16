@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace USP.TCC.ChatIA.Controllers
+namespace USP.TCC.ChatIA.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
