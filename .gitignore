@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /USP.TCC.ChatIA/appsettings.json
+/USP.TCC.ChatIA.MVC/appsettings.json
