@@ -14,14 +14,28 @@
         userDiv.innerHTML = "<strong>Você:</strong> " + userMessage;
         chatbox.appendChild(userDiv);
 
+        // Defina o JSON a ser enviado no corpo da solicitação POST
+        var data = {
+            Pergunta: userMessage,
+            Options: {
+                Temperature: 0.7
+            }
+        };
         message.value = "";
-
-        fetch("/get_response?message=" + encodeURIComponent(userMessage))
+        fetch("api/chat/pergunta/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
             .then(function (response) {
+                
                 return response.text();
             })
             .then(function (botMessage
             ) {
+                console.log(botMessage.content);
                 var botDiv = document.createElement("div");
                 botDiv.className = "message bot";
                 botDiv.innerHTML = "<strong>IA:</strong> " + botMessage;
