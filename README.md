@@ -4,10 +4,15 @@
 ## POC para o projeto de TCC
 
 **Aluno**: Leonardo Storolli Doratho
+
 **Curso**: MBA Gestão de Projetos
+
 **Orientador**: 
+
 **Data**:
+
 **Universidade**:
+
 
 **site de testes:** 
 https://tcchat.azurewebsites.net/
@@ -23,6 +28,7 @@ Para analisar seus dados de treinamento com a ferramenta de preparação de dado
 
 
 `openai tools fine_tunes.prepare_data -f <LOCAL_FILE>`
+
 Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contiverem um prompt e uma coluna/chave de conclusão:
 
 - (CSV) Valores separados por vírgula
