@@ -18,7 +18,13 @@ namespace USP.TCC.ChatIA.MVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Config()
+        {
+            return View();
+        }
+
+
+        public IActionResult About()
         {
             return View();
         }

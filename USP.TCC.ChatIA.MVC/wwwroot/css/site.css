@@ -1,9 +1,13 @@
-html {
-  font-size: 14px;
+html, body {
+    font-size: 14px;
+    background-color: #324c59;
+}
+.main {
+    background-color: #a5a5a5
 }
 
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }

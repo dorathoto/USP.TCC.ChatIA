@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<h1>Chat com IA</h1>
+<div class="chatbox" id="chatbox"></div>
+<input type="text" id="message" placeholder="Escreva sua dúvida aqui...">
+<button id="send">Enviar</button>
+<script>
+    var chatbox = document.getElementById("chatbox");
+    var message = document.getElementById("message");
+    var send = document.getElementById("send");
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    send.addEventListener("click", function () {
+        var userMessage = message.value;
+        var userDiv = document.createElement("div");
+        userDiv.className = "message user";
+        userDiv.innerHTML = "<strong>Você:</strong> " + userMessage;
+        chatbox.appendChild(userDiv);
+
+        message.value = "";
+
+        fetch("/get_response?message=" + encodeURIComponent(userMessage))
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (botMessage
+            ) {
+                var botDiv = document.createElement("div");
+                botDiv.className = "message bot";
+                botDiv.innerHTML = "<strong>IA:</strong> " + botMessage;
+                chatbox.appendChild(botDiv);
+
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+    });
+</script>
