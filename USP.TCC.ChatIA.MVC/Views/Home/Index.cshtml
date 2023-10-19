@@ -1,7 +1,12 @@
-﻿<h1>Chat com IA</h1>
-<div class="chatbox" id="chatbox"></div>
-<input type="text" id="message" placeholder="Escreva sua dúvida aqui...">
-<button id="send">Enviar</button>
+﻿<div class="container text-center">
+    <h1>Chat com IA</h1>
+    <div class="chatbox" id="chatbox" style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; min-height: 300px; max-height: 400px; overflow-y: auto;"></div>
+    <div class="input-group mb-3">
+        <input type="text" id="message" class="form-control" style="text-align: left" placeholder="Escreva sua dúvida aqui...">
+        <button class="btn btn-primary btn-lg" id="send">Enviar</button>
+    </div>
+</div>
+
 <script>
     var chatbox = document.getElementById("chatbox");
     var message = document.getElementById("message");
@@ -39,7 +44,7 @@
                 console.log(txt);
                 var botDiv = document.createElement("div");
                 botDiv.className = "message bot";
-                botDiv.innerHTML = "<strong>IA:</strong> " + txt.resposta;
+                botDiv.innerHTML = "<strong>IA:</strong> " + txt.resposta.replace(/\n/g, '<br>');;
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;

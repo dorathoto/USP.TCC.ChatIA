@@ -1,6 +1,14 @@
 html, body {
     font-size: 14px;
-    background-color: #324c59;
+    background-color: #353535;
+    color: #ffffffb3;
+}
+.navbar {
+    background-color: #607d8b !important;
+}
+.nomeProjeto {
+    font-weight: 800;
+    font-family: system-ui;
 }
 .main {
     background-color: #a5a5a5
@@ -31,6 +39,7 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #fdfdfd;
+    text-align: left !important;
 }
 
 .message {
