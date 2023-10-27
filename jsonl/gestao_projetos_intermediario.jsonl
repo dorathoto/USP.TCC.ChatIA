@@ -1,0 +1,32 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptando sua abordagem para responder a perguntas de nível intermediário."
+		},
+		{
+			"role": "user",
+			"content": "Como a matriz RACI é usada na gestão de projetos?"
+		},
+		{
+			"role": "assistant",
+			"content": "A matriz RACI é uma ferramenta que ajuda a definir papéis e responsabilidades nas equipes de projeto. RACI significa Responsável, Prestador de Contas, Consultado e Informado."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptando-se para responder a perguntas intermediárias com mais detalhes."
+		},
+		{
+			"role": "user",
+			"content": "Quais são os principais métodos de avaliação de riscos em projetos?"
+		},
+		{
+			"role": "assistant",
+			"content": "Os métodos comuns de avaliação de riscos em projetos incluem análise qualitativa e quantitativa, matriz de probabilidade/impacto e análise SWOT."
+		}
+	]
+}

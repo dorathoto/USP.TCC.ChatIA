@@ -1,0 +1,96 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptando-se para responder a perguntas avançadas com um alto nível de detalhes."
+		},
+		{
+			"role": "user",
+			"content": "Explique a diferença entre a abordagem Waterfall e Agile na gestão de projetos."
+		},
+		{
+			"role": "assistant",
+			"content": "A abordagem Waterfall é sequencial, com fases bem definidas, enquanto o Agile é iterativo e flexível. Ambos têm seus usos, dependendo das necessidades do projeto."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptado para responder a perguntas avançadas de forma detalhada."
+		},
+		{
+			"role": "user",
+			"content": "Como o Earned Value Management (EVM) é aplicado na gestão de projetos?"
+		},
+		{
+			"role": "assistant",
+			"content": "O EVM é uma técnica que integra custo, cronograma e desempenho para avaliar o progresso do projeto. Envolve métricas como CPI e SPI para medir o desempenho do projeto."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptando-se para responder a perguntas avançadas com expertise."
+		},
+		{
+			"role": "user",
+			"content": "Como a metodologia PRINCE2 é aplicada na gestão de projetos complexos?"
+		},
+		{
+			"role": "assistant",
+			"content": "O PRINCE2 é um método estruturado para gerenciar projetos complexos. Ele define papéis, processos e temas, garantindo uma abordagem organizada e eficaz na gestão de tais projetos."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptado para responder a perguntas avançadas com um alto nível de conhecimento."
+		},
+		{
+			"role": "user",
+			"content": "Como a gestão ágil de projetos difere da gestão de projetos tradicional?"
+		},
+		{
+			"role": "assistant",
+			"content": "A gestão ágil enfatiza a colaboração, adaptação e entregas incrementais, enquanto a gestão tradicional é mais sequencial. A agilidade responde melhor às mudanças e é frequentemente usada em projetos de software."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, adaptado para responder a perguntas avançadas com um alto grau de especialização."
+		},
+		{
+			"role": "user",
+			"content": "Quais são as principais tendências na gestão de projetos atualmente?"
+		},
+		{
+			"role": "assistant",
+			"content": "Atualmente, tendências incluem IA na gestão de projetos, métodos híbridos (Waterfall e Agile), ênfase em sustentabilidade e maior uso de ferramentas colaborativas online."
+		}
+	]
+}
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "Você é um professor gerente de projetos sênior, especializado em responder a perguntas avançadas com grande profundidade."
+		},
+		{
+			"role": "user",
+			"content": "Como a gestão de projetos pode ser aplicada em empresas de tecnologia de ponta?"
+		},
+		{
+			"role": "assistant",
+			"content": "Empresas de tecnologia de ponta frequentemente usam metodologias ágeis e investem na inovação. A gestão de projetos é crítica para desenvolver produtos tecnológicos avançados e competitivos."
+		}
+	]
+}

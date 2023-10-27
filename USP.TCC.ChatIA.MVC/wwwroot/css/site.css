@@ -1,11 +1,17 @@
 html, body {
     font-size: 14px;
-    background-color: #324c59;
+    background-color: #304a57;
+    color: wheat
 }
 .main {
     background-color: #a5a5a5
 }
-
+.card-header{
+    color: black
+}
+header {
+    background-color: #607D8B;
+}
 @media (min-width: 768px) {
     html {
     font-size: 16px;

@@ -2,7 +2,11 @@
     ViewData["Title"] = "Configurações ";
 }
 <h1>@ViewData["Title"]</h1>
-
+<style>
+    .font-preta{
+        color: black !important;
+    }
+</style>
 
 <div class="container mt-5">
     <div class="row">
@@ -12,7 +16,7 @@
                     Configuração
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form class="font-preta">
                         <div class="mb-3">
                             <label for="temperature" class="form-label">Temperature</label>
                             <input type="number" step="0.1" class="form-control" id="temperature" value="0.7">
@@ -33,7 +37,7 @@
                             <label for="frequencyPenalty" class="form-label">Frequency Penalty</label>
                             <input type="number" step="0.01" class="form-control" id="frequencyPenalty" value="0">
                         </div>
-                        <div class="mb-3">
+                 @*        <div class="mb-3">
                             <label for="ModelBase" class="form-label">Modelo de base</label>
                             <select id="ModelBase" class="form-control">
                                 <option value="#">gpt-35-turbo - Otimizado para Gestão de Projetos</option>
@@ -41,7 +45,7 @@
                                 <option value="#">gpt-35-turbo-instruct</option>
                                 <option value="#">text-embedding-ada-002</option>
                             </select>
-                        </div>
+                        </div> *@
                         <button type="submit" class="btn btn-primary">Salvar Configuração</button>
                     </form>
                 </div>
