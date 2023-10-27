@@ -36,3 +36,6 @@ Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contive
 - Pasta de trabalho do Microsoft Excel (XLSX)
 - JSON (JavaScript Object Notation)
 - Linhas JSON (JSONL)
+
+Data de criação deste projeto: agost/23
+Última atualização: out/23
