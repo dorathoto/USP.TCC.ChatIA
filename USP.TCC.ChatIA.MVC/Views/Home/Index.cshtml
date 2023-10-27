@@ -44,7 +44,7 @@
                 console.log(txt);
                 var botDiv = document.createElement("div");
                 botDiv.className = "message bot";
-                botDiv.innerHTML = "<strong>IA:</strong> " + txt.resposta.replace(/\n/g, '<br>');
+                botDiv.innerHTML = "<strong>IA:</strong> [acurácia: "+ txt.acuracia+ "]" + txt.resposta.replace(/\n/g, '<br>');
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;
