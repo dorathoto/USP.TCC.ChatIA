@@ -51,9 +51,5 @@ namespace USP.TCC.ChatIA.MVC.Controllers
             retorno.Acuracia = completions.Usage.TotalTokens / completions.Usage.CompletionTokens;
             return Ok(retorno);
         }
-
-
-
-
     }
 }

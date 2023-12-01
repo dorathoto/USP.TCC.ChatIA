@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/USP.TCC.ChatIA.MVC.styles.css" asp-append-version="true" />
     <title>@ViewData["Title"] - USP.TCC.ChatIA.MVC</title>
+    <link rel="manifest" href="/manifest.json" asp-append-version="true">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
+    <header class="header-container">
+       
+            <img src="/img/logo_120.png" alt="Logo" class="logo">
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand nomeProjeto" asp-area="" asp-controller="Home" asp-action="Index">USP.TCC.Chat IA para Gestão de Projetos</a>
+                <a class="navbar-brand nomeProjeto" asp-controller="Home" asp-action="Index">USP.TCC.Chat IA para Gestão de Projetos</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Chat</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Config">Configurações</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Config">Configurações</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">Sobre o TCC</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="About">Sobre o TCC</a>
                         </li>
                     </ul>
                 </div>
@@ -66,6 +68,44 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registrado com sucesso:', registration);
+                })
+                .catch((error) => {
+                    console.error('Erro ao registrar o Service Worker:', error);
+                });
+
+            // Adicione o código para exibir a recomendação de instalação
+            window.addEventListener('beforeinstallprompt', (event) => {
+                // Evita que o navegador mostre automaticamente o prompt de instalação
+                event.preventDefault();
+                const deferredPrompt = event;
+
+                const installButton = document.getElementById('installButton');
+
+                if (installButton) {
+                    installButton.style.display = 'block';
+                    installButton.addEventListener('click', () => {
+                        // Ativa o prompt de instalação quando o botão é clicado
+                        deferredPrompt.prompt();
+                        // Agora, aguarde o usuário responder ao prompt
+                        deferredPrompt.userChoice.then((choiceResult) => {
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('Usuário aceitou a instalação');
+                            } else {
+                                console.log('Usuário recusou a instalação');
+                            }
+                            // Limpa o evento para que ele não seja acionado novamente
+                            deferredPrompt = null;
+                        });
+                    });
+                }
+            });
+        }
+    </script>
 
     </body>
 </html>

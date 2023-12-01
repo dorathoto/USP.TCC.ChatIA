@@ -1,7 +1,19 @@
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px; 
+}
+
 html, body {
     font-size: 14px;
     background-color: #304a57;
-    color: wheat
+    color: wheat;
     background-color: #353535;
     color: #ffffffb3;
 }

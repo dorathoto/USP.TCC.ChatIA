@@ -1,0 +1,1 @@
+{"systemPrompt":"You are an AI assistant that helps people find information.","fewShotExamples":[],"chatParameters":{"deploymentName":"Modelo_ajuste_fino","maxResponseLength":873,"temperature":0.07,"topProbablities":0.58,"stopSequences":null,"pastMessagesToInclude":10,"frequencyPenalty":0,"presencePenalty":0}}
