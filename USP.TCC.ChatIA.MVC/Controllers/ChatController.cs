@@ -23,10 +23,11 @@ namespace USP.TCC.ChatIA.MVC.Controllers
             var key = Configuration["Azure:Key"];
 
             OpenAIClient client = new OpenAIClient(
-                    new Uri("https://tccusp.openai.azure.com/"),
+                    //new Uri("https://tccusp.openai.azure.com/"),
+                    new Uri("https://leonardod-tcc-aiservices1776302246.openai.azure.com/"),
                     new AzureKeyCredential(key));
 
-  
+
 
             // ### If streaming is not selected
             Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
@@ -35,7 +36,7 @@ namespace USP.TCC.ChatIA.MVC.Controllers
                 {
                     Messages =
                     {
-        new ChatMessage(ChatRole.User, model.Pergunta)
+                        new ChatMessage(ChatRole.User, model.Pergunta)
                     },
                     Temperature = model.Options.Temperature,
                     MaxTokens = model.Options.MaxTokens,
