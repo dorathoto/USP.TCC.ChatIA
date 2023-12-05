@@ -7,11 +7,11 @@
 
 **Curso**: MBA Gestão de Projetos
 
-**Orientador**: 
+**Orientador**: José Carlos Curvelo Santana
 
-**Data**:
+**Data**: 2023-2024
 
-**Universidade**:
+**Universidade**: Poli USP Pro
 
 
 **site de testes:** 
@@ -39,3 +39,9 @@ Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contive
 
 Data de criação deste projeto: agost/23
 Última atualização: out/23
+
+
+## Update método de aprendizagem. 
+Após uma minuciosa avaliação, ficou evidente que um conjunto de 1.000 perguntas em um chat do tamanho de um Llama 2 não teria impacto significativo no nível de especialização desejado. Diante dessa constatação, optou-se pelo desenvolvimento de uma nova ferramenta com inteligência artificial (IA) incorporada, cuja finalidade é gerar conteúdo para o treinamento da IA primária.
+
+Embora tenhamos perdido em termos de qualidade, a abordagem adotada proporciona ganhos consideráveis em quantidade, permitindo a geração fácil de milhares de perguntas e respostas. Essa estratégia visa superar a limitação da escala anterior, tornando o processo de aprendizado mais abrangente e eficiente.
