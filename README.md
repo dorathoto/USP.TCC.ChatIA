@@ -38,7 +38,7 @@ Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contive
 - Linhas JSON (JSONL)
 
 Data de criação deste projeto: agost/23
-Última atualização: out/23
+Última atualização: março/24
 
 
 ## Update método de aprendizagem. 
