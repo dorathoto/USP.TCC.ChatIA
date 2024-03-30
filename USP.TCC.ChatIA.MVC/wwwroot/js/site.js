@@ -1,4 +1,43 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+var chatbox = document.getElementById("chatbox");
+var message = document.getElementById("message");
+var send = document.getElementById("send");
 
-// Write your JavaScript code.
+send.addEventListener("click", function () {
+    var userMessage = message.value;
+    var userDiv = document.createElement("div");
+    userDiv.className = "message user";
+    userDiv.innerHTML = "<strong>Você:</strong> " + userMessage;
+    chatbox.appendChild(userDiv);
+
+    // Defina o JSON a ser enviado no corpo da solicitação POST
+    var data = {
+        Pergunta: userMessage,
+        Options: {
+            Temperature: 0.7
+        }
+    };
+    message.value = "";
+    fetch("api/chat/pergunta/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(function (response) {
+
+            return response.text();
+        })
+        .then(function (botMessage
+        ) {
+            var txt = JSON.parse(botMessage);
+            console.log(txt);
+            var botDiv = document.createElement("div");
+            botDiv.className = "message bot";
+            botDiv.innerHTML = "<strong>IA:</strong> [acurácia: " + txt.acuracia + "]" + txt.resposta.replace(/\n/g, '<br>');
+            chatbox.appendChild(botDiv);
+
+            chatbox.scrollTop = chatbox.scrollHeight;
+        });
+});
