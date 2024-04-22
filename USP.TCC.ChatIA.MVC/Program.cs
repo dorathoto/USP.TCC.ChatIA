@@ -11,7 +11,7 @@ namespace USP.TCC.ChatIA.MVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
             //builder.Services.Configure<Settings>(
             //    builder.Configuration.GetSection("Azure")

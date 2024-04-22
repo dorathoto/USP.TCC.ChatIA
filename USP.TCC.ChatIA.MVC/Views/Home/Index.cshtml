@@ -1,15 +1,56 @@
-﻿<div class="container mt-5">
-    <h1 class="text-center">Chat com IA</h1>
-    <div class="chatbox" id="chatbox"></div>
-    <div class="input-group mb-3">
-        <input type="text" id="message" class="form-control" placeholder="Escreva sua dúvida aqui...">
-        <button id="send" class="btn btn-primary">Enviar</button>
+﻿<div class="card card-warning card-outline direct-chat direct-chat-info">
+    <div class="card-header">
+        <h3 class="card-title" id="name"><i class="fas fa-robot"></i> Chat - Gestão de Projetos com IA</h3>
+
+        <div class="card-tools">
+            <span title="" id="posi" class="badge bg-dark">Beta </span>
+
+        </div>
     </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <!-- Conversations are loaded here -->
+        <div id="mssg" class="direct-chat-messages">
+            <div class="direct-chat-msg">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-left">ChatUSPIa</span>
+                </div>
+                <img class="direct-chat-img" src="~/img/logo_120.png" alt="Chat">
+                <div class="direct-chat-text">Oi, como posso ajudar você hoje?  </div>
+            </div>
+
+            <div class="direct-chat-msg right">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-right">Você</span>
+                </div>
+                <img class="direct-chat-img" src="~/img/avatar.png" alt="Message User Image">
+                <div class="direct-chat-text">Quem é vc?</div>
+            </div>
+        </div>
+        <!--/.direct-chat-messages-->
+        @*         <span class="character-typing">
+        <div><b class="wait">Wait,</b> <span>Typing ...</span> </div>
+        </span> *@
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <form id="frm">
+            <div class="input-group">
+                <textarea id="txtMsg" rows="1" name="message" required="" style="overflow:hidden;resize:none" placeholder="Digite sua dúvida de Gestão de Projetos ..." class="form-control"></textarea>
+
+                <span class="input-group-append">
+                    <button type="button" id="send" class="btn btn-dark">Perguntar</button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <!-- /.card-footer-->
 </div>
 
+
 <script>
-    var chatbox = document.getElementById("chatbox");
-    var message = document.getElementById("message");
+    var chatbox = document.getElementById("mssg");
+    var message = document.getElementById("txtMsg");
     var send = document.getElementById("send");
 
     send.addEventListener("click", function () {
@@ -35,7 +76,7 @@
             body: JSON.stringify(data)
         })
             .then(function (response) {
-                
+
                 return response.text();
             })
             .then(function (botMessage
@@ -44,7 +85,7 @@
                 console.log(txt);
                 var botDiv = document.createElement("div");
                 botDiv.className = "message bot";
-                botDiv.innerHTML = "<strong>IA:</strong> [acurácia: "+ txt.acuracia+ "]" + txt.resposta.replace(/\n/g, '<br>');
+                botDiv.innerHTML = "<strong>IA:</strong> [acurácia: " + txt.acuracia + "]" + txt.resposta.replace(/\n/g, '<br>');
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;
