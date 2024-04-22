@@ -22,13 +22,10 @@ namespace USP.TCC.ChatIA.MVC.Controllers
         {
             var key = Configuration["Azure:Key"];
 
-            OpenAIClient client = new OpenAIClient(
+            var client = new OpenAIClient(
                     new Uri("https://tccusp.openai.azure.com/"),
                     new AzureKeyCredential(key));
 
-  
-
-            // ### If streaming is not selected
             Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
                 "_teste01",
                 new ChatCompletionsOptions()
