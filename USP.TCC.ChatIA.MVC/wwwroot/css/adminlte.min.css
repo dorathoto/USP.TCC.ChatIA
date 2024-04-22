@@ -26483,7 +26483,8 @@ body.text-sm .input-group-text {
         }
 
 .card-warning.card-outline {
-    border-top: 3px solid #ffc107
+    border-top: 3px solid #ffc107;
+    margin-top: 20px
 }
 
 .card-warning.card-outline-tabs > .card-header a:hover {

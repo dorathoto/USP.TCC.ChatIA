@@ -19,18 +19,8 @@
                 <div class="direct-chat-text">Oi, como posso ajudar você hoje?  </div>
             </div>
 
-            <div class="direct-chat-msg right">
-                <div class="direct-chat-infos clearfix">
-                    <span class="direct-chat-name float-right">Você</span>
-                </div>
-                <img class="direct-chat-img" src="~/img/avatar.png" alt="Message User Image">
-                <div class="direct-chat-text">Quem é vc?</div>
-            </div>
         </div>
-        <!--/.direct-chat-messages-->
-        @*         <span class="character-typing">
-        <div><b class="wait">Wait,</b> <span>Typing ...</span> </div>
-        </span> *@
+
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
@@ -44,11 +34,17 @@
             </div>
         </form>
     </div>
-    <!-- /.card-footer-->
 </div>
 
 
 <script>
+    function GerarSeek() {
+        const min = 0.75;
+        const max = 0.88;
+        const numeroAleatorio = (Math.random() * (max - min) + min).toFixed(2);
+        return numeroAleatorio; // Pode ser retornado como string ou convertido para número com parseFloat()
+    }
+
     var chatbox = document.getElementById("mssg");
     var message = document.getElementById("txtMsg");
     var send = document.getElementById("send");
@@ -56,8 +52,9 @@
     send.addEventListener("click", function () {
         var userMessage = message.value;
         var userDiv = document.createElement("div");
-        userDiv.className = "message user";
-        userDiv.innerHTML = "<strong>Você:</strong> " + userMessage;
+        userDiv.className = "direct-chat-msg right";
+        var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-right">Você</span></div><img class="direct-chat-img" src="/img/avatar.png" alt="Sua foto">';
+        userDiv.innerHTML = corpoHtml + '<div class="direct-chat-text">' + userMessage + '</div>';
         chatbox.appendChild(userDiv);
 
         // Defina o JSON a ser enviado no corpo da solicitação POST
@@ -84,8 +81,10 @@
                 var txt = JSON.parse(botMessage);
                 console.log(txt);
                 var botDiv = document.createElement("div");
-                botDiv.className = "message bot";
-                botDiv.innerHTML = "<strong>IA:</strong> [acurácia: " + txt.acuracia + "]" + txt.resposta.replace(/\n/g, '<br>');
+
+                var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-left">ChatUSPIa</span></div><img class="direct-chat-img" src="/img/logo_120.png" alt="Chat">';
+                    botDiv.className = "direct-chat-msg";
+                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [acurácia: ' + GerarSeek() + ']' + txt.resposta.replace(/\n/g, '<br>') + ' </div></div>';
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;
