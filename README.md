@@ -12,7 +12,7 @@
 
 ## Projeto de TCC
 
-**Aluno**: Leonardo Storolli Doratho
+**Aluno**: Leonardo Storolli Dorathoto
 
 **Curso**: MBA Gestão de Projetos
 
@@ -21,6 +21,7 @@
 **Data**: 2023-2024
 
 **Universidade**: Poli USP Pro
+**Linkedin**: [perfil](https://www.linkedin.com/in/doratiotto/)
 
 
 **site do chatbot:** 
