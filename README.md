@@ -1,3 +1,4 @@
+
 <img alt="GitHub commit merge status" src="https://img.shields.io/github/commit-status/dorathoto/USP.TCC.ChatIA/stage/9eed5f547d743210f2b3589ffd574bfc931e44f4">
 <img alt="GitHub License" src="https://img.shields.io/github/license/dorathoto/USP.TCC.ChatIA">
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/dorathoto/USP.TCC.ChatIA">
@@ -9,7 +10,7 @@
 
 # USP.TCC.ChatIA
 
-## POC para o projeto de TCC
+## Projeto de TCC
 
 **Aluno**: Leonardo Storolli Doratho
 
@@ -22,7 +23,7 @@
 **Universidade**: Poli USP Pro
 
 
-**site de testes:** 
+**site do chatbot:** 
 https://tcchat.azurewebsites.net/
 
 
@@ -31,9 +32,7 @@ https://tcchat.azurewebsites.net/
 ### Para Validar os JSONL (dados de treinamento)
 `pip install --upgrade openai `
 
-
 Para analisar seus dados de treinamento com a ferramenta de preparação de dados, execute o comando Python a seguir. 
-
 
 `openai tools fine_tunes.prepare_data -f <LOCAL_FILE>`
 
@@ -56,3 +55,13 @@ Embora tenho perdido em termos de qualidade,esta abordagem proporciona ganhos co
 
 
 
+## Stacks
+
+ - ASP.NET .NET 8 - C# 12
+ - Docker - compose
+ - Microsoft Azure
+ - Javascript - PWA
+ - LlaMa 2 - [sobre o Llama](https://llama.meta.com/)
+- OpenAI - Microsoft [OpenAI](https://learn.microsoft.com/pt-br/azure/ai-services/openai/overview)
+- Tempo estimado de desenvolvimento: 158h
+- Tempo estimado de treinamento: 62h
