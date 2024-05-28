@@ -32,7 +32,7 @@ namespace USP.TCC.ChatIA.MVC.Controllers
                 {
                     Messages =
                     {
-        new ChatMessage(ChatRole.User, model.Pergunta)
+                        new ChatMessage(ChatRole.User, model.Pergunta)
                     },
                     Temperature = model.Options.Temperature,
                     MaxTokens = model.Options.MaxTokens,
