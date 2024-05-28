@@ -2,8 +2,8 @@
 {
     public class Settings
     {
-        public Logging Logging { get; set; }
-        public string AllowedHosts { get; set; }
+        public Logging? Logging { get; set; }
+        public string? AllowedHosts { get; set; }
         public Azure Azure { get; set; }
     }
 
