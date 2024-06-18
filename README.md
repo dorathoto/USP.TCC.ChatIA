@@ -51,9 +51,9 @@ Data de criação deste projeto: agost/23
 
 
 ## Update método de aprendizagem. 
-Após uma minuciosa avaliação, ficou evidente que um conjunto de 1.000 perguntas em um chat do tamanho de um Llama 2 não teria impacto significativo no nível de especialização desejado. Diante dessa constatação, optou-se pelo desenvolvimento de uma nova ferramenta com inteligência artificial (IA) incorporada, cuja finalidade é gerar conteúdo para o treinamento da IA primária.
+Após uma minuciosa avaliação, ficou evidente que um conjunto de 500 perguntas em um chat do tamanho de um Llama 2 não teria impacto significativo no nível de especialização desejado. Foi então criado 6.000 perguntas/respostas e no final terminou com 25.438 perguntas/respostas, porém apesar da melhora ainda não foi o suficiente. Diante dessa constatação, optou-se pelo desenvolvimento de uma nova ferramenta com inteligência artificial (IA) incorporada, cuja finalidade é gerar conteúdo para o treinamento da IA primária.
 
-Embora tenho perdido em termos de qualidade,esta abordagem proporciona ganhos consideráveis em quantidade de documentos de treinamento, permitindo a geração fácil de milhares de perguntas e respostas. Essa estratégia visa superar a limitação da escala anterior, tornando o processo de aprendizado mais abrangente e eficiente.
+Embora tenho perdido em termos de qualidade, esta abordagem proporciona ganhos consideráveis em quantidade de documentos de treinamento, permitindo a geração fácil de milhares de perguntas e respostas. Essa estratégia visa superar a limitação da escala anterior, tornando o processo de aprendizado mais abrangente e eficiente.
 
 
 
@@ -64,6 +64,8 @@ Embora tenho perdido em termos de qualidade,esta abordagem proporciona ganhos co
  - Microsoft Azure
  - Javascript - PWA
  - LlaMa 2 - [sobre o Llama](https://llama.meta.com/)
-- OpenAI - Microsoft [OpenAI](https://learn.microsoft.com/pt-br/azure/ai-services/openai/overview)
-- Tempo estimado de desenvolvimento: 158h
-- Tempo estimado de treinamento: 62h
+ - OpenAI - Microsoft [OpenAI](https://learn.microsoft.com/pt-br/azure/ai-services/openai/overview)
+ - Tempo estimado de desenvolvimento: 158h
+ - Tempo estimado de treinamento: 62h
+ - Tempo estimado de pesquisa: 40h
+ - Tempo estimado para escrita do artigo: 30h
