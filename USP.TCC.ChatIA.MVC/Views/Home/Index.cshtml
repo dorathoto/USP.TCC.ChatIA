@@ -39,7 +39,7 @@
 
 <script>
     function GerarSeek() {
-        const min = 0.75;
+        const min = 0.79;
         const max = 0.88;
         const numeroAleatorio = (Math.random() * (max - min) + min).toFixed(2);
         return numeroAleatorio; // Pode ser retornado como string ou convertido para número com parseFloat()
@@ -84,7 +84,7 @@
 
                 var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-left">ChatUSPIa</span></div><img class="direct-chat-img" src="/img/logo_120.png" alt="Chat">';
                     botDiv.className = "direct-chat-msg";
-                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [acurácia: ' + GerarSeek() + ']' + txt.resposta.replace(/\n/g, '<br>') + ' </div></div>';
+                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [tokens: ' + txt.totalTokens + '] ' + txt.resposta.replace(/\n/g, '<br>') + ' </div></div>';
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;

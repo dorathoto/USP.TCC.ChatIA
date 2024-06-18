@@ -3,6 +3,6 @@
     public class ChatResposta
     {
         public string Resposta { get; set; }
-        public double Acuracia { get; set; }
+        public double TotalTokens { get; set; }
     }
 }

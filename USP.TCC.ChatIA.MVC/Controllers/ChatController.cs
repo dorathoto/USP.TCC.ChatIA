@@ -45,7 +45,7 @@ namespace USP.TCC.ChatIA.MVC.Controllers
 
             var retorno = new ChatResposta();
             retorno.Resposta = completions.Choices[0].Message.Content;
-            retorno.Acuracia = completions.Usage.TotalTokens / completions.Usage.CompletionTokens;
+            retorno.TotalTokens = completions.Usage.TotalTokens;
             return Ok(retorno);
         }
     }
