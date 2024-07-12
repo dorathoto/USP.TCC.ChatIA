@@ -1,4 +1,5 @@
 
+
 <img alt="GitHub commit merge status" src="https://img.shields.io/github/commit-status/dorathoto/USP.TCC.ChatIA/stage/9eed5f547d743210f2b3589ffd574bfc931e44f4">
 <img alt="GitHub License" src="https://img.shields.io/github/license/dorathoto/USP.TCC.ChatIA">
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/dorathoto/USP.TCC.ChatIA">
@@ -32,9 +33,11 @@ https://tcchat.azurewebsites.net/
 
 
 ### Para Validar os JSONL (dados de treinamento)
+Versão 1.3 com openai
+
 `pip install --upgrade openai `
 
-Para analisar seus dados de treinamento com a ferramenta de preparação de dados, execute o comando Python a seguir. 
+Para analisar os dados de treinamento com a ferramenta de preparação de dados, execute o comando Python a seguir:
 
 `openai tools fine_tunes.prepare_data -f <LOCAL_FILE>`
 
@@ -43,11 +46,11 @@ Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contive
 - (CSV) Valores separados por vírgula
 - Valores separados por tabulação (TSV)
 - Pasta de trabalho do Microsoft Excel (XLSX)
-- JSON (JavaScript Object Notation)
+- JSON (JavaScript Object Notation) - **preferencial**
 - Linhas JSON (JSONL)
 
 Data de criação deste projeto: agost/23
-Última atualização: março/24
+Última atualização: julho/24
 
 
 ## Update método de aprendizagem. 
@@ -62,9 +65,11 @@ Embora tenho perdido em termos de qualidade, esta abordagem proporciona ganhos c
  - ASP.NET .NET 8 - C# 12
  - Docker - compose
  - Microsoft Azure
- - Javascript - PWA
+ - Javascript -> PWA
+ - Html5 & CSS3 (Sass)
  - LlaMa 2 - [sobre o Llama](https://llama.meta.com/)
  - OpenAI - Microsoft [OpenAI](https://learn.microsoft.com/pt-br/azure/ai-services/openai/overview)
+-----------
  - Tempo estimado de desenvolvimento: 158h
  - Tempo estimado de treinamento: 62h
  - Tempo estimado de pesquisa: 40h

@@ -3,50 +3,49 @@ using Azure.AI.OpenAI;
 using Microsoft.AspNetCore.Mvc;
 using USP.TCC.ChatIA.MVC.Models;
 
-namespace USP.TCC.ChatIA.MVC.Controllers
+namespace USP.TCC.ChatIA.MVC.Controllers;
+
+[ApiController]
+[Route("api/[controller]/[action]")]
+public class ChatController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]/[action]")]
-    public class ChatController : ControllerBase
+    private readonly IConfiguration Configuration;
+    private readonly Settings _appSettings;
+    public ChatController(IConfiguration configuration)
     {
-        private readonly IConfiguration Configuration;
-        private readonly Settings _appSettings;
-        public ChatController(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        Configuration = configuration;
+    }
 
 
-        [HttpPost]
-        public async Task<IActionResult> Pergunta(ChatPergunta model)
-        {
-            var key = Configuration["Azure:Key"];
+    [HttpPost]
+    public async Task<IActionResult> Pergunta(ChatPergunta model)
+    {
+        var key = Configuration["Azure:Key"];
 
-            var client = new OpenAIClient(
-                    new Uri("https://tccusp.openai.azure.com/"),
-                    new AzureKeyCredential(key));
+        var client = new OpenAIClient(
+                new Uri("https://tccusp.openai.azure.com/"),
+                new AzureKeyCredential(key));
 
-            Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
-                "_teste01",
-                new ChatCompletionsOptions()
+        Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
+            "_teste01",
+            new ChatCompletionsOptions()
+            {
+                Messages =
                 {
-                    Messages =
-                    {
-                        new ChatMessage(ChatRole.User, model.Pergunta)
-                    },
-                    Temperature = model.Options.Temperature,
-                    MaxTokens = model.Options.MaxTokens,
-                    NucleusSamplingFactor = model.Options.NucleusSamplingFactor,
-                    FrequencyPenalty = model.Options.FrequencyPenalty,
-                    PresencePenalty = model.Options.FrequencyPenalty,
-                });
+                    new ChatMessage(ChatRole.User, model.Pergunta)
+                },
+                Temperature = model.Options.Temperature,
+                MaxTokens = model.Options.MaxTokens,
+                NucleusSamplingFactor = model.Options.NucleusSamplingFactor,
+                FrequencyPenalty = model.Options.FrequencyPenalty,
+                PresencePenalty = model.Options.FrequencyPenalty,
+            });
 
-            ChatCompletions completions = responseWithoutStream.Value;
+        ChatCompletions completions = responseWithoutStream.Value;
 
-            var retorno = new ChatResposta();
-            retorno.Resposta = completions.Choices[0].Message.Content;
-            retorno.TotalTokens = completions.Usage.TotalTokens;
-            return Ok(retorno);
-        }
+        var retorno = new ChatResposta();
+        retorno.Resposta = completions.Choices[0].Message.Content;
+        retorno.TotalTokens = completions.Usage.TotalTokens;
+        return Ok(retorno);
     }
 }
