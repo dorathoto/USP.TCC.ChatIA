@@ -1,9 +1,4 @@
-
-
-<img alt="GitHub commit merge status" src="https://img.shields.io/github/commit-status/dorathoto/USP.TCC.ChatIA/stage/9eed5f547d743210f2b3589ffd574bfc931e44f4">
-<img alt="GitHub License" src="https://img.shields.io/github/license/dorathoto/USP.TCC.ChatIA">
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/dorathoto/USP.TCC.ChatIA">
-<img alt="Language" src="https://img.shields.io/badge/language-C%23-blueviolet">
+<img alt="GitHub commit merge status" src="https://img.shields.io/github/commit-status/dorathoto/USP.TCC.ChatIA/stage/9eed5f547d743210f2b3589ffd574bfc931e44f4"> <img alt="GitHub License" src="https://img.shields.io/github/license/dorathoto/USP.TCC.ChatIA"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/dorathoto/USP.TCC.ChatIA"> <img alt="Language" src="https://img.shields.io/badge/language-C%23-blueviolet">
 
 
 
