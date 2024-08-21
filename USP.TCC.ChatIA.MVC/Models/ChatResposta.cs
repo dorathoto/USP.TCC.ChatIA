@@ -1,8 +1,7 @@
-﻿namespace USP.TCC.ChatIA.MVC.Models
+﻿namespace USP.TCC.ChatIA.MVC.Models;
+
+public class ChatResposta
 {
-    public class ChatResposta
-    {
-        public string Resposta { get; set; }
-        public double Acuracia { get; set; }
-    }
+    public string Resposta { get; set; }
+    public double TotalTokens { get; set; }
 }

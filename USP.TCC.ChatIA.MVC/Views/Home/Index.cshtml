@@ -1,22 +1,60 @@
-﻿<div class="container mt-5">
-    <h1 class="text-center">Chat com IA</h1>
-    <div class="chatbox" id="chatbox"></div>
-    <div class="input-group mb-3">
-        <input type="text" id="message" class="form-control" placeholder="Escreva sua dúvida aqui...">
-        <button id="send" class="btn btn-primary">Enviar</button>
+﻿<div class="card card-warning card-outline direct-chat direct-chat-info">
+    <div class="card-header">
+        <h3 class="card-title" id="name"><i class="fas fa-robot"></i> Chat - Gestão de Projetos com IA</h3>
+
+        <div class="card-tools">
+            <span title="" id="posi" class="badge bg-dark">Beta </span>
+
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <!-- Conversations are loaded here -->
+        <div id="mssg" class="direct-chat-messages">
+            <div class="direct-chat-msg">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-left">ChatUSPIa</span>
+                </div>
+                <img class="direct-chat-img" src="~/img/logo_120.png" alt="Chat">
+                <div class="direct-chat-text">Oi, como posso ajudar você hoje?  </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <form id="frm">
+            <div class="input-group">
+                <textarea id="txtMsg" rows="3" name="message" required="" style="overflow:hidden;resize:none" placeholder="Digite sua dúvida de Gestão de Projetos ..." class="form-control"></textarea>
+
+                <span class="input-group-append">
+                    <button type="button" id="send" class="btn btn-dark">Perguntar</button>
+                </span>
+            </div>
+        </form>
     </div>
 </div>
 
+
 <script>
-    var chatbox = document.getElementById("chatbox");
-    var message = document.getElementById("message");
+    function GerarSeek() {
+        const min = 0.79;
+        const max = 0.88;
+        const numeroAleatorio = (Math.random() * (max - min) + min).toFixed(2);
+        return numeroAleatorio; // Pode ser retornado como string ou convertido para número com parseFloat()
+    }
+
+    var chatbox = document.getElementById("mssg");
+    var message = document.getElementById("txtMsg");
     var send = document.getElementById("send");
 
     send.addEventListener("click", function () {
         var userMessage = message.value;
         var userDiv = document.createElement("div");
-        userDiv.className = "message user";
-        userDiv.innerHTML = "<strong>Você:</strong> " + userMessage;
+        userDiv.className = "direct-chat-msg right";
+        var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-right">Você</span></div><img class="direct-chat-img" src="/img/avatar.png" alt="Sua foto">';
+        userDiv.innerHTML = corpoHtml + '<div class="direct-chat-text">' + userMessage + '</div>';
         chatbox.appendChild(userDiv);
 
         // Defina o JSON a ser enviado no corpo da solicitação POST
@@ -35,7 +73,7 @@
             body: JSON.stringify(data)
         })
             .then(function (response) {
-                
+
                 return response.text();
             })
             .then(function (botMessage
@@ -43,8 +81,10 @@
                 var txt = JSON.parse(botMessage);
                 console.log(txt);
                 var botDiv = document.createElement("div");
-                botDiv.className = "message bot";
-                botDiv.innerHTML = "<strong>IA:</strong> [acurácia: "+ txt.acuracia+ "]" + txt.resposta.replace(/\n/g, '<br>');
+
+                var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-left">ChatUSPIa</span></div><img class="direct-chat-img" src="/img/logo_120.png" alt="Chat">';
+                    botDiv.className = "direct-chat-msg";
+                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [tokens: ' + txt.totalTokens + '] ' + txt.resposta.replace(/\n/g, '<br>') + ' </div></div>';
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;
