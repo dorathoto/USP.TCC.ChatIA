@@ -28,10 +28,6 @@ public class ChatController : ControllerBase
                 new Uri(endpoint),
                 new AzureKeyCredential(key));
 
-        AzureKeyCredential credential = new AzureKeyCredential(key);
-        AzureOpenAIClient azureClient = new(new Uri(endpoint), credential);
-        ChatClient chatClient = azureClient.GetChatClient("gpt-4");
-
         Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
             "_teste01",
             new ChatCompletionsOptions()
