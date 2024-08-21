@@ -27,6 +27,7 @@ public class ChatController : ControllerBase
     {
         var key = Configuration["Azure:Key"];
         var endpoint = Configuration["Azure:EndPoint"];
+        var nameModel = Configuration["Azure:DEPLOYMENT_NAME"];
 
         var client = new OpenAIClient(
                 new Uri(endpoint),
@@ -69,7 +70,7 @@ public class ChatController : ControllerBase
 
 
         Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
-            "_teste01",
+            nameModel,
             options);
 
         ChatCompletions completions = responseWithoutStream.Value;
