@@ -20,13 +20,16 @@ public class ChatController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Pergunta(ChatPergunta model)
     {
+
+
         var key = Configuration["Azure:Key"];
         var endpoint = Configuration["Azure:EndPoint"];
-
 
         var client = new OpenAIClient(
                 new Uri(endpoint),
                 new AzureKeyCredential(key));
+
+
 
         Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
             "_teste01",
@@ -34,7 +37,7 @@ public class ChatController : ControllerBase
             {
                 Messages =
                 {
-                    new ChatMessage(ChatRole.User, model.Pergunta)
+                    new Azure.AI.OpenAI.ChatMessage(ChatRole.User, model.Pergunta)
                 },
                 Temperature = model.Options.Temperature,
                 MaxTokens = model.Options.MaxTokens,
