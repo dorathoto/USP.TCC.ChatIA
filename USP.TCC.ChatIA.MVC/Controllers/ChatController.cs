@@ -21,10 +21,11 @@ namespace USP.TCC.ChatIA.MVC.Controllers
         public async Task<IActionResult> Pergunta(ChatPergunta model)
         {
             var key = Configuration["Azure:Key"];
+            var endpoint = Configuration["Azure:EndPoint"];
 
             OpenAIClient client = new OpenAIClient(
-                    //new Uri("https://tccusp.openai.azure.com/"),
-                    new Uri("https://leonardod-tcc-aiservices1776302246.openai.azure.com/"),
+                    new Uri(endpoint),
+                   // new Uri("https://leonardod-tcc-aiservices1776302246.openai.azure.com/"),
                     new AzureKeyCredential(key));
 
 
