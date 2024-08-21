@@ -37,8 +37,7 @@ public class ChatController : ControllerBase
         var serializedObject2 = HttpContext.Session.GetString("TCChave");
         if (!string.IsNullOrEmpty(serializedObject2))
         {
-            _sessionQuestions = JsonConvert.DeserializeObject<SessionQuestions>(serializedObject2); // Desserializa a string JSON de volta para o objeto
-                                                                                                       // Agora você pode usar o objetoRecuperado normalmente
+            _sessionQuestions = JsonConvert.DeserializeObject<SessionQuestions>(serializedObject2); 
         }
 
 
