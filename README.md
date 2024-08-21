@@ -14,7 +14,7 @@
 
 **Orientador**: José Carlos Curvelo Santana
 
-**Data**: 2023-2024
+**Data**: 2022-2024
 
 **Universidade**: Poli USP Pro
 
