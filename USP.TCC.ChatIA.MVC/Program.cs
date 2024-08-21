@@ -7,6 +7,7 @@ namespace USP.TCC.ChatIA.MVC
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddResponseCompression(options =>
             {
@@ -16,6 +17,14 @@ namespace USP.TCC.ChatIA.MVC
             builder.Services.Configure<GzipCompressionProviderOptions>(options =>
             {
                 options.Level = CompressionLevel.Optimal;
+            });
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(60);
+                options.Cookie.Name = "TCC_Leo";
+                options.Cookie.IsEssential = true;
             });
 
             builder.Services.AddControllersWithViews();
@@ -34,6 +43,7 @@ namespace USP.TCC.ChatIA.MVC
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
