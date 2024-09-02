@@ -81,13 +81,18 @@
                 var txt = JSON.parse(botMessage);
                 console.log(txt);
                 var botDiv = document.createElement("div");
-
+                console.log(txt.resposta);
                 var corpoHtml = '<div class="direct-chat-infos clearfix"><span class="direct-chat-name float-left">ChatUSPIa</span></div><img class="direct-chat-img" src="/img/logo_120.png" alt="Chat">';
                     botDiv.className = "direct-chat-msg";
-                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [tokens: ' + txt.totalTokens + '] ' + txt.resposta.replace(/\n/g, '<br>') + ' </div></div>';
+                botDiv.innerHTML = corpoHtml + '<div class="direct-chat-text"> [tokens: ' + txt.totalTokens + '] ' + substituirMarcadoresPorNegrito(txt.resposta.replace(/\n/g, '<br>')) + ' </div></div>';
                 chatbox.appendChild(botDiv);
 
                 chatbox.scrollTop = chatbox.scrollHeight;
             });
     });
+
+    function substituirMarcadoresPorNegrito(texto) {
+        // Substitui "**" por "<b>"
+        return texto.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    }
 </script>
