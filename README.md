@@ -46,7 +46,7 @@ Essa ferramenta aceita arquivos nos seguintes formatos de dados, se eles contive
 
 Data de criação deste projeto: março/23
 
-Última atualização: agosto/24
+Última atualização: setembro/24
 
 
 ## Update método de aprendizagem. 
@@ -66,7 +66,7 @@ Embora tenho perdido em termos de qualidade, esta abordagem proporciona ganhos c
  - LlaMa 2 - [sobre o Llama](https://llama.meta.com/)
  - OpenAI - Microsoft [OpenAI](https://learn.microsoft.com/pt-br/azure/ai-services/openai/overview)
 -----------
- - Tempo estimado de desenvolvimento: 168h
+ - Tempo estimado de desenvolvimento: 198h
  - Tempo estimado de treinamento: 62h
  - Tempo estimado de pesquisa: 40h
  - Tempo estimado para escrita do artigo: 50h
