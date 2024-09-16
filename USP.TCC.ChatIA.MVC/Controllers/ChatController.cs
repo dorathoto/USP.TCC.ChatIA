@@ -25,6 +25,13 @@ public class ChatController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Pergunta(ChatPergunta model)
     {
+        var retorno_tmp = new ChatResposta
+        {
+            Resposta = "Chatbot desabilitado temporariamente, devido a grande quantidade de acessos +- 3mil por dia, acabei desativando. Caso deseje ver ele em funcionamento, entre em contato comigo.",
+            TotalTokens = 42
+        };
+        return Ok(retorno_tmp);
+
         var key = Configuration["Azure:Key"];
         var endpoint = Configuration["Azure:EndPoint"];
         var nameModel = Configuration["Azure:DEPLOYMENT_NAME"];
