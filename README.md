@@ -20,6 +20,7 @@
 
 **Linkedin**: [perfil](https://www.linkedin.com/in/doratiotto/)
 
+[TCC:](https://github.com/dorathoto/USP.TCC.ChatIA/blob/stage/TCC_Revisado.pdf)
 
 **site do chatbot:** 
 https://tcchat.azurewebsites.net/
