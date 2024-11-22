@@ -20,7 +20,7 @@
 
 **Linkedin**: [perfil](https://www.linkedin.com/in/doratiotto/)
 
-[TCC:](https://github.com/dorathoto/USP.TCC.ChatIA/blob/stage/TCC_Revisado.pdf)
+[Link do PDF TCC (nota 10):](https://github.com/dorathoto/USP.TCC.ChatIA/blob/stage/TCC_Revisado.pdf)
 
 **site do chatbot:** 
 https://tcchat.azurewebsites.net/
@@ -71,3 +71,7 @@ Embora tenho perdido em termos de qualidade, esta abordagem proporciona ganhos c
  - Tempo estimado de treinamento: 62h
  - Tempo estimado de pesquisa: 40h
  - Tempo estimado para escrita do artigo: 50h
+
+
+## Update & Conclusões
+Consegui nota máxima neste TCC (nota 10) graças em muito ao meu Orientador. Como essa tecnologia evolui muito rápido, durante o TCC eu vi a documentação da Microsoft mudar completamente 3x. O Código do começo do projeto já não rodava no final do projeto. Enfim estamos no meio dessa revolução, tudo graças a tecnologia Transformer do Google e assim me procure para saber novidades deste projeto.
